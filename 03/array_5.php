@@ -13,8 +13,11 @@ $life = [
 ];
 
 // 以下のXXXXXを修正
-$study = $life["study"]["国語"][1]."、".$life["study"]["理科"][0]."、".$life["study"]["社会"][0];
-$club = $life["club"]["運動部"][2]."と".$life["club"]["文化部"][0];
+$study = $life["study"]["国語"][1] . "、" .
+    $life["study"]["理科"][0] . "、" .
+    $life["study"]["社会"][0];
+$club = $life["club"]["運動部"][2] .
+    "と" . $life["club"]["文化部"][0];
 
 echo "私は、{$study}に力を入れて、学習をしています｡<br>" .
-     "また部活は、{$club}を兼部しています｡";
+    "また部活は、{$club}を兼部しています｡";
