@@ -1,10 +1,10 @@
 <?php
+// 変数を用意
 $age = '';
 $err_msg = '';
 $msg = "";
-
+// methodがPOSTだったら変数に値をセットする
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
     $age =  $_POST['age'];
 
     if (empty($age)) {

@@ -15,9 +15,10 @@ switch($operator){
         echo "$num1" . "*" . "$num2" . "=" . $num1 * $num2;
         break;
     case 'division':
-        echo $num / $num2;
+        echo "$num1" . "/" . "$num2" . "=" . $num1 / $num2;
         break;
-        default:
-        "正しい演算子を指定して下さい";
+    default:
+        echo "正しい演算子を指定して下さい";
+        break;
 }
 
