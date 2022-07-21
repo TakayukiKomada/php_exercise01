@@ -3,20 +3,18 @@ $count1 = '';
 $count2 = '';
 $count3 = '';
 $err_msg = '';
-$msg = "";
+$msg = '';
+$sum = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $count1 = $_POST['count1'];
     $count2 = $_POST['count2'];
     $count3 = $_POST['count3'];
 
-    $sum = $count1 + $count2 + $count3;
-
-
-    if (empty($count1) && empty($count2) && empty($count3)) {
-        $err_msg = '数字を入力してください。';
+    if (is_numeric($count1) && is_numeric($count2) && is_numeric($count3)) {
+        $sum = $count1 + $count2 + $count3;
     } else {
-        $msg = "合計値は{$sum}です";
+        $err_msg = '数字を入力してください。';
     }
 }
 ?>
@@ -41,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="number" name="count2">
             <p>3つ目の数字</p>
             <input type="number" name="count3">
-            <?php if (!empty($err_msg)) : ?>
+            <?php if (isset($err_msg)) : ?>
                 <ul>
                     <li><?= $err_msg ?></li>
                 </ul>
@@ -52,7 +50,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </form>
     <div>
-        <?= htmlspecialchars($msg, ENT_QUOTES, 'UTF-8') ?>
+        <?php if (isset($sum)) {
+            echo '<br>';
+            echo htmlspecialchars("合計値は{$sum}です", ENT_QUOTES, 'UTF-8');
+        }
+        ?>
     </div>
 </body>
 
