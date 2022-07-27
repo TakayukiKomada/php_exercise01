@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="">電話番号</label><br>
             <input type="number" name="tel"><br>
             <label for="">メールアドレス</label><br>
-            <input type="text" name="email">
+            <input type="email" name="email">
         </div>
 
         <h3>購入するものを選択してください</h3>
